@@ -1,0 +1,419 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+    .header {
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       background-color: #ffffff;
+       z-index: 1000; /* Ensure the header appears above other content */
+}
+
+   .hero-section h1 {
+            font-size: 4rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .hero-section .btn {
+            padding: 0.75rem 2rem;
+        }
+
+        .logo-text {
+            font-family: 'Lobster', cursive;
+            font-size: 3rem;
+            background-image: linear-gradient(to right, #ffb6c1, #ff69b4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .navbar {
+            padding-top: 0.5rem; /* Adjust the top padding */
+            padding-bottom: 0.5rem; /* Adjust the bottom padding */
+        }
+        
+        .navbar-brand, .navbar-nav .nav-link {
+            line-height: 1.5; /* Adjust the line height */
+        }
+
+        /* Navbar */
+        .navbar-brand {
+            font-family: 'Lobster', cursive;
+            font-size: 6rem;
+            background-image: linear-gradient(to right, #0070FF, #FF4081);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .navbar-nav .dropdown-menu {
+            background-color: #f7f5f2;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-nav .dropdown-item {
+            color: #333;
+        }
+
+        .navbar-nav .dropdown-item:hover {
+            background-color: #eae9e8;
+        }
+
+        .form-control {
+            background-color: #f7f5f2;
+            border: none;
+            box-shadow: none;
+        }
+
+        .form-control:focus {
+            box-shadow: none;
+        }
+
+        /* Banner Section */
+        .banner-section {
+            padding: 5rem 0;
+        }
+
+        .banner-section img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Product Categories Section */
+        .product-categories {
+            padding: 5rem 0;
+            background-color: #e39a9c;
+            text-align: center;
+        }
+
+        .product-categories h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .product-categories .card {
+            margin-bottom: 3rem;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            padding: 5rem 0;
+            background-color: #f7f5f2;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        /* Footer Section */
+        .footer {
+            padding: 2rem 0;
+            background-color: #f7f5f2;
+            text-align: center;
+        }
+     
+
+        .image-frame img {
+            max-width: 100%;
+            height: auto;
+            margin-right: 10px; /* Spacing between images */
+        }
+        .image-scroll-container {
+            overflow-x: auto; /* Enable horizontal scrolling */
+            white-space: nowrap;
+            padding: 50px 0;
+            width: 100%; /* Ensure the container spans the full width */
+            display: flex;
+        }
+
+        .image-scroll-container img {
+            width: 400px; /* Adjust image width as needed */
+            margin-right: 50px; /* Adjust margin between images */
+            vertical-align: middle;
+        }
+        .box-above-scroll {
+            padding: 20px; /* Adjust padding */
+            margin-bottom: 20px; /* Adjust margin bottom */
+            color: #fff; /* Set text color to white */
+            animation: gradientAnimation 5s infinite alternate; /* Apply animation */
+        }
+        .card-body {
+        height: 120px; /* Adjust the height as needed */
+        overflow: hidden;
+    }
+    User
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.image-container figure {
+  background-color: #f0f0f0; /* Background color same as image */
+  color: #333; /* Text color same as image */
+  width: 300px; /* Set fixed width for consistent layout */
+  padding: 20px; /* Add padding for spacing */
+  margin: 10px;
+  text-align: center;
+}
+
+.image-container figure img {
+  display: block; /* Ensure image takes full width */
+  margin-bottom: 10px; /* Add spacing below image */
+}
+
+.image-container figure figcaption {
+  font-style: italic;
+  font-size: 14px;
+}
+
+
+.image-frame {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    /* Set background color to black */
+    padding: 5px; /* Add padding to create space between the images */
+}
+
+.image-frame .card {
+    width: calc(20% - 10px); /* Adjust the width of each card and consider the padding */
+    border: 5px solid goldenrod; /* Add a golden border around each image */
+    margin-right: 5px; /* Adjust margin between the images */
+}
+
+.image-frame .card:last-child {
+    margin-right: 0; /* Remove margin from the last image to avoid extra space */
+}
+.footer {
+            padding: 2rem 0;
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer h5 {
+            margin-bottom: 1rem;
+        }
+
+@keyframes gradientAnimation {
+            0% {
+                background: linear-gradient(to right, #ffb6c1, #c88caa); /* Start color */
+            }
+            100% {
+                background: linear-gradient(to right, #a66385, #ffb6c1); /* End color */
+            }
+        }
+        h2{
+          text-align: center;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FAY Cosmetics</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  
+  <body  style="background-color: #e39a9c;">
+    <nav class="navbar" style="background-color: black;">
+      <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+              <div class="container-fluid">
+                  <a class="navbar-brand" href="#">FAY</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                      <ul class="navbar-nav mb-2 mb-lg-0">
+                          <li class="nav-item">
+                              <a class="nav-link active" aria-current="" href="#">Home</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="cart">Cart</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="{% url 'kylie'%}">Kylie</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="MAC">MAC</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="Nykaa">Nykaa</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="{% url 'Lakme'%}">Lakme</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="beauty_tips">beauty tips</a>
+                        </li>
+                          <li class="nav-item">
+                              <a class="nav-link disabled" aria-disabled="true"></a>
+                          </li>
+                      </ul>
+                      <form class="d-flex">
+                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success" type="submit">Search</button>
+                      </form>
+                  </div>
+              </div>
+          </nav>
+      </nav>
+  </nav>
+  <div class="box-above-scroll" style="background-color: linear gradient">
+      <h2>Welcome to FAY Cosmetics</h2>
+  </div>
+  
+
+  <!-- Image Scroll Section -->
+  <marquee behavior="scroll" direction="right" scrollamount="9">
+    <img src="https://kyliecosmetics.com/cdn/shop/files/0110_Foundation_Reveal-Banner_Desktop_1728x600-ratio_OPT_4.jpg?crop=center&height=1077&v=1704326261&width=1920" alt="Image 1" width="500" height="300">
+    <img src="https://i.pinimg.com/originals/20/f5/f3/20f5f308870fcf5d82f2cb3287c8a22b.jpg"alt="Image 2" width="600" height="300">
+    <img src="https://media.fashionnetwork.com/cdn-cgi/image/fit=contain,width=1000,height=1000/m/c807/84ed/1cac/4777/edb8/80bf/5ba0/54a1/7f2d/5906/5906.png" alt="Image 3" width="600" height="350">
+   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTTpz6M6ANRa5YsWEhUY2wug-oXWWJq1BCEA&usqp=CAU"alt="Image 4"width='600'height='300'>
+</marquee>
+
+
+    <script src="" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+      const container = document.getElementById('image-scroll-container');
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      container.addEventListener('mousedown', (e) => {
+          isDown = true;
+          startX = e.pageX - container.offsetLeft;
+          scrollLeft = container.scrollLeft;
+      });
+
+      container.addEventListener('mouseleave', () => {
+          isDown = false;
+      });
+
+      container.addEventListener('mouseup', () => {
+          isDown = false;
+      });
+
+      container.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - container.offsetLeft;
+          const walk = (x - startX) * 3;
+          container.scrollLeft = scrollLeft - walk;
+      });
+  </script>
+  <h5><b>EXPLORE OUR TOP BRANDS</b> </h5>
+  <div class="image-frame d-flex justify-content-start">
+    <!-- Brand 1 -->
+    <div class="card" style="width: 18rem;">
+        <img src="https://kyliecosmetics.com/cdn/shop/files/1212_12-Days-of-Surprises-2023_mobile_day-12B_4947c153-075d-40fc-971d-d98c215d0228.jpg?crop=center&height=590&v=1704753424&width=450" class="card-img-top" alt="Brand 1">
+        <div class="card-body">
+            <p class="card-text">kylie <br><b>“So glam, so Kylie.”</b></p>
+        </div>
+    </div>
+
+    <!-- Brand 2 -->
+    <div class="card" style="width: 18rem;">
+        <img src="data:image/jpeg;base64,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" class="card-img-top" alt="Brand 2">
+        <div class="card-body">
+            <p class="card-text">MAC Cosmetics<br><b> "All Ages, All Races, All Genders"</b></p>
+        </div>
+    </div>
+
+    <!-- Brand 3 -->
+    <div class="card" style="width: 18rem;">
+        <img src="https://www.lakmeindia.com/cdn/shop/files/27855_H-8901030992957_1000x.jpg?v=1705389565" class="card-img-top" alt="Brand 3">
+        <div class="card-body">
+            <p class="card-text">Lakmé's current <br><b> "Lakmé Reinvent"</b></p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+      <img src="https://images-static.nykaa.com/media/catalog/product/3/a/3a484e1NYKAC00000736_1.jpg" class="card-img-top" alt="Brand 3">
+      <div class="card-body">
+          <p class="card-text">Nykaa<br><b>"Your Beauty, Our Passion"</b></p>
+      </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="https://www.reneecosmetics.in/cdn/shop/files/8906121648829-min.jpg?v=1704708116" class="card-img-top" alt="Brand 3">
+    <div class="card-body">
+        <p class="card-text">Renee Cosmetics<br><b> "Reinventing Beauty".</b></p>
+    </div>
+</div>
+    <!-- Add more cards for additional brands -->
+</div>
+<br>
+<br>
+
+<h5>RECOMMENDED PRODUCTS</h5>
+<div class="image-frame d-flex justify-content-start">
+  <!-- Recommendation 1 -->
+  <div class="card" style="width: 18rem;">
+      <img src="https://sdcdn.io/mac/in/mac_sku_MW5K01_1x1_0.png?width=1080&height=1080" class="card-img-top" alt="Recommendation 1">
+      <div class="card-body">
+          <p class="card-text">MAC Cosmetics<br><b> "The perfect blend of style and elegance."</b></p>
+      </div>
+  </div>
+
+  <!-- Recommendation 2 -->
+  <div class="card" style="width: 18rem;">
+      <img src="https://www.lakmeindia.com/cdn/shop/files/27844_H-8901030996320_1000x1000.jpg?v=1705559551" class="card-img-top" alt="Recommendation 2">
+      <div class="card-body">
+          <p class="card-text">Lakmé's latest collection<br><b> "Experience beauty like never before."</b></p>
+      </div>
+  </div>
+
+  <!-- Recommendation 3 -->
+  <div class="card" style="width: 18rem;">
+      <img src="https://kyliecosmetics.com/cdn/shop/files/KJS_LIB_24_VanillaCaramel_Stylized_Closed_800x.jpg?v=1706312608" class="card-img-top" alt="Recommendation 3">
+      <div class="card-body">
+          <p class="card-text">Kylie Cosmetics<br><b> "Unleash your inner glam."</b></p>
+      </div>
+  </div>
+
+  <!-- Recommendation 4 -->
+  <div class="card" style="width: 18rem;">
+      <img src="https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/1/f/1f0db218904245710101_2.jpg" class="card-img-top" alt="Recommendation 4">
+      <div class="card-body">
+          <p class="card-text">Nykaa's new arrival<br><b> "Upgrade your beauty game."</b></p>
+      </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="https://www.reneecosmetics.in/cdn/shop/files/SuperGlowCleansingPowder_ListingPI_001_1.jpg?v=1708847555" class="card-img-top" alt="Recommendation 5">
+    <div class="card-body">
+        <p class="card-text">Renee Cosmetics<br><b> "Illuminate your skin with Renee."</b></p>
+    </div>
+</div>
+</div>
+
+
+<br>
+<br>
+<footer class="footer" id="footer">
+    <div class="container">
+        <h5>Contact Us</h5>
+        <p>Email: contact@fay.com</p>
+        <p>Phone: +1 (123) 456-7890</p>
+        <!-- Add your social media links or any other footer content here -->
+    </div>
+</footer>
+  </body>
+  </html>
+
+
+
+
+
+
+  

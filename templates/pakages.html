@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Python Module and Package Syntax Examples</title>
+    <style>
+        .box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .box-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .syntax-example {
+            margin-left: 20px;
+            list-style-type: none;
+        }
+
+        .description {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Python Module and Package Syntax Examples</h1>
+    
+    <div class="box">
+        <h2 class="box-title">Module: math</h2>
+        <p class="description">The math module provides mathematical functions and constants.</p>
+        <ul class="syntax-example">
+            <li>import math</li>
+            <li>print(math.pi)</li>
+            <li>print(math.sqrt(16))</li>
+        </ul>
+    </div>
+    
+    <div class="box">
+        <h2 class="box-title">Module: os</h2>
+        <p class="description">The os module provides a portable way of using operating system-dependent functionality.</p>
+        <ul class="syntax-example">
+            <li>import os</li>
+            <li>print(os.getcwd())</li>
+            <li>print(os.listdir())</li>
+        </ul>
+    </div>
+    
+    <div class="box">
+        <h2 class="box-title">Module: random</h2>
+        <p class="description">The random module implements pseudo-random number generators for various distributions.</p>
+        <ul class="syntax-example">
+            <li>import random</li>
+            <li>print(random.randint(1, 10))</li>
+            <li>print(random.choice(['apple', 'banana', 'cherry']))</li>
+        </ul>
+    </div>
+    
+    <div class="box">
+        <h2 class="box-title">Package: numpy</h2>
+        <p class="description">NumPy is the fundamental package for scientific computing with Python.</p>
+        <ul class="syntax-example">
+            <li>import numpy as np</li>
+            <li>arr = np.array([1, 2, 3])</li>
+            <li>print(arr)</li>
+        </ul>
+    </div>
+    
+    <div class="box">
+        <h2 class="box-title">Package: pandas</h2>
+        <p class="description">Pandas is a fast, powerful, flexible, and easy-to-use open-source data analysis and manipulation library built on top of the Python programming language.</p>
+        <ul class="syntax-example">
+            <li>import pandas as pd</li>
+            <li>df = pd.DataFrame({'A': [1, 2], 'B': [3, 4]})</li>
+            <li>print(df)</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2 class="box-title">Package: matplotlib</h2>
+        <p class="description">Matplotlib is a package for data visualization with Python.</p>
+        <ul class="syntax-example">
+            <li>import matplotlib.pyplot as plt</li>
+            <li>x = [1, 2, 3, 4, 5]</li>
+            <li>y = [10, 20, 25, 30, 35]</li>
+            <li>plt.plot(x, y)</li>
+            <li>plt.xlabel('x-axis')</li>
+            <li>plt.ylabel('y-axis')</li>
+            <li>plt.title('Title')</li>
+            <li>plt.show()</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2 class="box-title">Package: scikit-learn</h2>
+        <p class="description">Scikit-learn is a machine learning library for Python.</p>
+        <ul class="syntax-example">
+            <li>from sklearn import datasets</li>
+            <li>from sklearn.model_selection import train_test_split</li>
+            <li>from sklearn.neighbors import KNeighborsClassifier</li>
+            <li>iris = datasets.load_iris()</li>
+            <li>X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.3)</li>
+            <li>knn = KNeighborsClassifier(n_neighbors=3)</li>
+            <li>knn.fit(X_train, y_train)</li>
+            <li>print(knn.score(X_test, y_test))</li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h2 class="box-title">Package: seaborn</h2>
+        <p class="description">Seaborn is a Python data visualization library based on matplotlib.</p>
+        <ul class="syntax-example">
+            <li>import seaborn as sns</li>
+            <li>tips = sns.load_dataset("tips")</li>
+            <li>sns.histplot(data=tips, x="total_bill", hue="sex", kde=True)</li>
+        </ul>
+    </div>
+</body>
+</html>
