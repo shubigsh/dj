@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nykaa Cosmetics</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: black;
+            color:rgb(208, 35, 64);
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Ensure the header has relative positioning */
+            z-index: 1; /* Ensure the header appears below the carousel */
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            /* No height adjustment */
+            width: 100%; /* Ensure the image fills the carousel */
+        }
+
+        .carousel-container {
+            position: relative; /* Ensure the carousel container has relative positioning */
+            z-index: 2; /* Ensure the carousel appears above the header */
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative; /* Ensure the product container has relative positioning */
+            z-index: 3; /* Ensure the product container is above the carousel */
+        }
+
+        .product-card {
+            width: 250px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer; /* Add cursor pointer for product card */
+            transition: transform 0.3s ease; /* Add transition effect */
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .product-info {
+            padding: 10px;
+        }
+
+        .product-info h3 {
+            margin-top: 0;
+        }
+
+        .product-info p {
+            margin-bottom: 10px;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05); /* Scale up product card on hover */
+        }
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            width: 100%;
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Nykaa</h1>
+    </div>
+
+    <!-- Carousel -->
+    <div class="carousel-container">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://www.nykaa.com/beauty-blog/wp-content/uploads/2020/01/New-Year-New-Makeup-Kit_bb270.jpg" class="d-block w-100" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="hhttps://www.nykaa.com/beauty-blog/wp-content/uploads/images/issue325/Nykaa-Matte-GlossOI1.jpg" class="d-block w-100" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://imgmedia.lbb.in/media/2019/02/5c5bea7ebb324a2cbb05ab7d_1549527678063.jpg" class="d-block w-100" alt="Image 3">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+     
+
+    <h3>AVAILABLE PRODUCTS OF Nykaa</h3>
+   
+
+        <!-- Add more product cards dynamically here -->
+        <div class="product-container">
+            {% for product in Nykaa %}
+            <div class="product-card">
+                <img src="{{ product.image_url }}" alt="{{ product.name }}">
+                <div class="product-info">
+                    <h3>{{ product.name }}</h3>
+                    <p>Price: ${{ product.price }}</p>
+                    <p>Description: {{ product.description }}</p>
+                    <button class="add-to-cart" onclick="navigateToCart()">Add to Cart</button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    <script>
+        function navigateToCart() {
+            window.location.href = 'cart.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kylie Cosmetics</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+         body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: black;
+            color: pink;
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Ensure the header has relative positioning */
+            z-index: 1; /* Ensure the header appears below the carousel */
+        }
+
+        .carousel-item img {
+            object-fit: cover;
+            /* No height adjustment */
+            width: 100%; /* Ensure the image fills the carousel */
+        }
+
+        .carousel-container {
+            position: relative; /* Ensure the carousel container has relative positioning */
+            z-index: 2; /* Ensure the carousel appears above the header */
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+            position: relative; /* Ensure the product container has relative positioning */
+            z-index: 3; /* Ensure the product container is above the carousel */
+        }
+
+        .product-card {
+            width: 250px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .product-info {
+            padding: 10px;
+        }
+
+        .product-info h3 {
+            margin-top: 0;
+        }
+
+        .product-info p {
+            margin-bottom: 10px;
+        }
+
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            width: 100%;
+        }
+
+        .add-to-cart:hover {
+            background-color: #45a049;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+        .image-frame {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: black; /* Set background color to black */
+    padding: 5px; /* Add padding to create space between the images */
+}
+
+.image-frame .card {
+    width: calc(20% - 10px); /* Adjust the width of each card and consider the padding */
+    border: 5px solid transparent; /* Add a transparent border initially */
+    margin-right: 5px; /* Adjust margin between the images */
+}
+
+.image-frame .card:last-child {
+    margin-right: 0; /* Remove margin from the last image to avoid extra space */
+}
+
+.image-frame .card:hover {
+    border-color: goldenrod; /* Change border color to golden on hover */
+}
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Kylie</h1>
+    </div>
+
+    <!-- Carousel -->
+    <div class="carousel-container">
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://kyliecosmetics.com/cdn/shop/files/Website_Banners_Test_Setting_Powders_Mobile.jpg?crop=center&height=1616&v=1676654310&width=2880" class="d-block w-100" alt="Image 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://kyliecosmetics.com/cdn/shop/files/KJC_FDN_24_Light_4.5C_Stylized_bd920382-c18d-409f-ac62-24c2b81562b1.jpg?crop=center&height=600&v=1705450654&width=600" class="d-block w-100" alt="Image 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://kyliecosmetics.com/cdn/shop/files/setting-powder_2consumer-result.jpg?height=1000&v=1670874801&width=1000" class="d-block w-100" alt="Image 3">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-container">
+        {% for product in Kylie %}
+        <div class="product-card">
+            <img src="{{ product.image_url }}" alt="{{ product.name }}">
+            <div class="product-info">
+                <h3>{{ product.name }}</h3>
+                <p>Price: ${{ product.price }}</p>
+                <p>Description: {{ product.description }}</p>
+                <button class="add-to-cart" onclick="navigateToCart()">Add to Cart</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+
+    <script>
+        function navigateToCart() {
+            window.location.href = 'cart.html';
+        }
+    </script>
+</body>
+</html>
