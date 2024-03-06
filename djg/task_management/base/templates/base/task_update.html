@@ -1,0 +1,31 @@
+<!-- base/templates/base/task_update.html -->
+
+{% extends "base.html" %}
+
+{% load static %}  <!-- Load static files for CKEditor -->
+
+<!-- Include CKEditor JavaScript file -->
+<script src="{% static 'ckeditor/ckeditor.js' %}"></script>
+
+{% block title %}
+Update
+{% endblock %}
+
+{% block content %}
+
+<h1 class="h2">Update Task</h1>
+
+<!-- Form for updating task -->
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form.as_p }}
+    <input type="submit" value="Update Task">  <!-- Submit button -->
+</form>
+
+<!-- Initialize CKEditor -->
+<script>
+    CKEDITOR.replace('id_description');  <!-- Replace textarea with id 'id_description' with CKEditor instance -->
+</script>
+
+{% endblock %}
